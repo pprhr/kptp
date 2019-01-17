@@ -1,0 +1,22 @@
+html {
+  font-size: 62.5%;
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+body {
+  position: relative;
+  height: 100%;
+  min-width: 320px;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "Yu Gothic", Verdana, Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-all;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}

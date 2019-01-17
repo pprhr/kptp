@@ -1,0 +1,36 @@
+{
+  "name": "kptp",
+  "version": "1.0.0",
+  "description": "KPT Project.",
+  "main": "index.js",
+  "scripts": {
+    "css:build": "yarn build-css && yarn autoprefixer",
+    "css:watch": "yarn watch-css & yarn watch-autoprefixer",
+
+    "build-css": "node-sass --include-path scss ./asset/scss/**.scss ./asset/css/style.min.css --output-style compressed",
+    "watch-css": "nodemon -e scss -x \"yarn build-css\"",
+    "autoprefixer": "postcss --use autoprefixer --no-map -o ./asset/css/style.min.css ./asset/css/style.min.css",
+    "watch-autoprefixer": "nodemon -e scss -x \"yarn autoprefixer\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pprhr/kptp.git"
+  },
+  "author": "pprhr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pprhr/kptp/issues"
+  },
+  "homepage": "https://github.com/pprhr/kptp#readme",
+  "dependencies": {
+    "autoprefixer": "^9.4.5",
+    "node-sass": "^4.11.0",
+    "node-watch": "^0.6.0",
+    "nodemon": "^1.18.9",
+    "postcss": "^7.0.11",
+    "postcss-cli": "^6.1.1"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
+}
