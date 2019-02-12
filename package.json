@@ -7,7 +7,7 @@
     "css:build": "yarn build-css && yarn autoprefixer",
     "css:watch": "yarn watch-css & yarn watch-autoprefixer",
 
-    "build-css": "node-sass --include-path scss ./asset/scss/**.scss ./asset/css/style.min.css --output-style compressed",
+    "build-css": "node-sass --include-path scss ./asset/scss/style.scss ./asset/css/style.min.css --output-style compressed",
     "watch-css": "nodemon -e scss -x \"yarn build-css\"",
     "autoprefixer": "postcss --use autoprefixer --no-map -o ./asset/css/style.min.css ./asset/css/style.min.css",
     "watch-autoprefixer": "nodemon -e scss -x \"yarn autoprefixer\""
