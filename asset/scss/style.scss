@@ -26,71 +26,77 @@ body {
 .header {
   padding: 16px 0;
   box-shadow: rgba(0, 0, 0, .2) 0 2px 4px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: auto;
+    &__action {
+      padding: 0;
+      border: none;
+      &_add {
+        padding: 4px 20px;
+        background: #11BEDD;
+        border: 1px solid #11BEDD;
+        border-radius: 2px;
+        color: #fff;
+      }
+    }
+    &__icon {
+      color: #11BEDD;
+    }
+  }
 }
 
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  max-width: 960px;
-  margin: auto;
-}
-
-.header__inner__action {
-  padding: 0;
-  border: none;
-}
-
-.header__inner__icon {
-  color: #11BEDD;
-}
-
-.header__inner__action_add {
-  padding: 4px 20px;
-  background: #11BEDD;
-  border: 1px solid #11BEDD;
-  border-radius: 2px;
-  color: #fff;
+.icon-setting:after {
+  display: inline-block;
+  width: 1.28em;
+  font-family: FontAwesome;
+  text-align: center;
+  content: "\f0d0";
+  font-size: 1.3rem;
 }
 
 .main {
   font-size: 14px;
   color: #333;
+
+  &__inner {
+    max-width: 960px;
+    margin: auto;
+  }
 }
 
-nav {
-  margin: 16px 0;
+.nav {
+  margin-top: 16px;
   border-bottom: solid 1px #C4C4C4;
 }
 
-nav ul {
+.list {
   display: flex;
-  margin-left: 56px;
+  // margin-left: 56px;
+  &__item {
+    padding: 12px;
+    color: #666;
+    &:not(.list__item--active):hover {
+      cursor: pointer;
+      color: #101010;
+    }
+    &--active {
+      margin-bottom: -1px;
+      border: solid 1px #C4C4C4;
+      border-bottom: 1px solid #fff;
+      border-radius: 4px 4px 0 0;
+      border-top: 6px solid #11BEDD;
+    }
+  }
 }
 
-nav li {
-  padding: 12px;
-  color: #666;
+.kpt-list {
+  margin-top: 16px;
 }
 
-nav li.active {
-  margin-bottom: -1px;
-  border: solid 1px #C4C4C4;
-  border-bottom: 1px solid #fff;
-  border-radius: 4px 4px 0 0;
-  border-top: 6px solid #11BEDD;
-}
-
-nav li:not(.active):hover {
-  cursor: pointer;
-  color: #101010;
-}
-
-.kpt-tab {
-  margin-left: 56px;
-  margin-right: 56px;
-}
-
-.content {
+.kpt-list__content {
   display: flex;
   margin-bottom: 16px;
   padding: 12px 8px;
@@ -98,7 +104,7 @@ nav li:not(.active):hover {
   box-shadow: rgba(0, 0, 0, .2) 2px 2px 6px;
 }
 
-.icon-area {
+.kpt-list__content__user-icon {
   padding: 0 12px;
 }
 
