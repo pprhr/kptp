@@ -49,12 +49,9 @@ body {
 }
 
 .icon-setting:after {
-  display: inline-block;
-  width: 1.28em;
-  font-family: FontAwesome;
-  text-align: center;
-  content: "\f0d0";
-  font-size: 1.3rem;
+  content: "\f00d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
 }
 
 .main {
