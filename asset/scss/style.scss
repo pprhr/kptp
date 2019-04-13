@@ -55,33 +55,37 @@ body {
   color: #11BEDD;
 }
 
-.main {
+.container {
   font-size: 14px;
   color: #333;
+}
 
-  &__inner {
+.localnav-area {
+  margin-top: 16px;
+  border-bottom: solid 1px #C4C4C4;
+  &__box {
     max-width: 960px;
     margin: auto;
   }
 }
 
-.nav {
-  margin-top: 16px;
-  border-bottom: solid 1px #C4C4C4;
-}
-
-.list {
+.localnav {
   display: flex;
-  // margin-left: 56px;
   &__item {
     padding: 12px;
     color: #666;
-    &:not(.list__item--active):hover {
+    &:hover {
       cursor: pointer;
       color: #101010;
+      background: #f3f3f3;
+      padding-top: 6px;
+      border-radius: 4px 4px 0 0;
+      border-top: 6px solid #f3f3f3;
     }
     &--active {
       margin-bottom: -1px;
+      padding: 12px;
+      padding-top: 6px;
       border: solid 1px #C4C4C4;
       border-bottom: 1px solid #fff;
       border-radius: 4px 4px 0 0;
@@ -90,25 +94,24 @@ body {
   }
 }
 
-.kpt-list {
-  margin-top: 16px;
+.content {
+  max-width: 960px;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.kpt-list__content {
+.casette-kpt {
   display: flex;
   margin-bottom: 16px;
   padding: 12px 8px;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, .2) 2px 2px 6px;
-}
-
-.kpt-list__content__user-icon {
-  padding: 0 12px;
-}
-
-
-.name-date-area {
-  padding: 8px 0;
+  &__left {
+    padding: 0 12px;
+  }
+  &__center {
+    padding: 8px 0;
+  }
 }
 
 .user-name {
@@ -120,23 +123,14 @@ body {
   font-size: 12px;
 }
 
-.kpt-data {
+.kpt-list {
   display: flex;
   padding: 8px 0;
+  &__item {
+    width: 33%;
+    margin-right: 16px;
+  }
 }
-
-.kpt-data > div {
-  width: 33%;
-  margin-right: 16px;
-}
-
-.kpt-content > div {
-  margin-top: 4px;
-  padding-bottom: 2px;
-  border-bottom: 2px dotted #E5E5E5;
-  line-height: 1.5;
-}
-
 .kpt-title {
   margin-bottom: 8px;
   padding-left: 4px;
@@ -145,12 +139,20 @@ body {
   font-weight: bold;
 }
 
-footer {
-  margin: 80px 0 24px;
-  text-align: center;
+.kpt-content-list {
+  &__item {
+    margin-top: 4px;
+    padding-bottom: 2px;
+    border-bottom: 2px dotted #E5E5E5;
+    line-height: 1.5;
+  }
 }
 
-footer span {
-  color: #666;
-  font-size: 12px;
+.footer {
+  margin: 80px 0 24px;
+  text-align: center;
+  &__center {
+    color: #666;
+    font-size: 12px;
+  }
 }
