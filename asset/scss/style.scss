@@ -1,12 +1,24 @@
 @import "reset";
 
+$base_width: 960px;
+$breakpoint-pc: 1024px;
+$breakpoint-tablet: 980px;
+$breakpoint-mobile: 640px;
+
+
+@mixin max-screen($breakpoint)  {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
 html {
   font-size: 62.5%;
   * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -29,11 +41,12 @@ body {
   &__inner {
     display: flex;
     justify-content: space-between;
-    max-width: 960px;
+    max-width: $base_width;
     margin: auto;
+    padding: 0px 8px;
+    &__logo {
+    }
     &__action {
-      padding: 0;
-      border: none;
       &_add {
         padding: 4px 20px;
         background: #11BEDD;
@@ -56,15 +69,14 @@ body {
 }
 
 .container {
-  font-size: 14px;
-  color: #333;
+  margin-top: 48px;
 }
 
 .localnav-area {
-  margin-top: 16px;
+  padding: 0px 8px;
   border-bottom: solid 1px #C4C4C4;
   &__box {
-    max-width: 960px;
+    max-width: $base_width;
     margin: auto;
   }
 }
@@ -95,54 +107,79 @@ body {
 }
 
 .content {
-  max-width: 960px;
+  max-width: $base_width;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-.casette-kpt {
+.casette-standard {
   display: flex;
-  margin-bottom: 16px;
-  padding: 12px 8px;
-  border-radius: 2px;
+  @include max-screen($breakpoint-mobile) {
+    display: block;
+    width: 94%;
+    margin: auto;
+    margin-bottom: 24px;
+  }
+  margin-bottom: 24px;
+  padding: 24px;
+  border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .2) 2px 2px 6px;
   &__left {
-    padding: 0 12px;
+    margin-right: 24px;
+    @include max-screen($breakpoint-mobile) {
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
   }
   &__center {
-    padding: 8px 0;
+    width: 100%;
+    &__head {
+      margin-bottom: 16px;
+    }
+    &__body {
+    }
   }
 }
 
-.user-name {
-  font-weight: bold;
+.label {
+  &__bold {
+    font-weight: bold;
+  }
+  &__small {
+    color: #666;
+    font-size: 10px;
+  }
 }
 
-.kpt-date {
-  color: #666;
-  font-size: 12px;
-}
-
-.kpt-list {
+.note-list {
   display: flex;
-  padding: 8px 0;
+  @include max-screen($breakpoint-mobile) {
+    display: block;
+  }
   &__item {
     width: 33%;
+    @include max-screen($breakpoint-mobile) {
+      width: 100%;
+    }
+  }
+  &__item:not(:last-child) {
     margin-right: 16px;
+    @include max-screen($breakpoint-mobile) {
+      margin-bottom: 16px;
+    }
   }
 }
-.kpt-title {
-  margin-bottom: 8px;
+
+.note-title {
   padding-left: 4px;
   border-left: 4px solid #11BEDD;
   color: #11BEDD;
   font-weight: bold;
 }
 
-.kpt-content-list {
+.note-content-list {
   &__item {
-    margin-top: 4px;
-    padding-bottom: 2px;
+    margin-top: 8px;
     border-bottom: 2px dotted #E5E5E5;
     line-height: 1.5;
   }
